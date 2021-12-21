@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: 0;
+    margin:0;
+    padding:0;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+//variables
+$darkest-black: #151515;
+$grayish-black: #202022;
+$gray: #9A9999;
+$yellow: #FFDE5B;
+$pink: #FF78A9;
+$violet: #8684FF;
+$green: #0Eff8B;
+$red: #FF6262;
+$bright-blue: #84F8FF;
+
+//mix-ins
+@mixin center-in-between{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin center-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin center-column-start{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-start;
+}
+
+@mixin center-row {
+    display: flex;
+    flex-direction: row;
+}
+/***************************************BODY*******************************************/
+body {
+    @include center-column();
+    font-size: 16px; //base-size
+    background-color: $darkest-black;
+    color: white;
+    font-weight: 300;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    overflow-x: hidden;
+}
+
+main {
+    width: 85vw;
+    z-index: 1;
+}
+
+
+/*******************************SCROLLBAR***************************************************/
+
+::-webkit-scrollbar {
+    width: 1em;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #dfc534; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $grayish-black; ; 
+   
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $grayish-black; 
+  }
+
+
+/*******************************DIVIDERS***************************************************/
+hr.solid {
+    border-top: 0.3px solid white;
+    margin: 0 0 4em 0;
+    width: 80%;
+  }
+.divider {
+    @Include center-column();
+}
+
+.hr-divider {
+    height: 2px;
+    background-color: white;
+    width:100%;
+    margin: 1.5em 0 4.8em 0;
+}
+.divider-number{
+    font-size: 1.2em;
+    font-weight: 500;
+    line-height: 31px;
+    margin-right: 1em;
+    
+}
+.divider-title {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+
+/*******************************NAV SECTION***************************************************/
+
+
+nav {
+    @include center-in-between();
+    ul  {
+        list-style: none;
+        display: flex;
+
+        li {
+            padding: 1em 1em;
+            cursor: pointer;
+        }
+    }
+    padding: 2em 0;
+
+    a {
+        display: none;
+    }
+}
+.logo {
+    @include center-in-between();
+    img {
+        width: 30px;
+        border-radius: 50%;
+        margin-right: 1em;
+
+    }
+    h3 {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.3em;
+        line-height: 31px;
+
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
+.hero-section {
+    @include center-column-start;
+    height: 450px;
+    width: 100%;
+
+    h1 {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 4.5em;
+        line-height: 100px;
+    }
+    p {
+        font-weight: 300;
+        font-size: 1.2em;
+        line-height: 1.7em;
+    }
+}
+
+/*******************************SCROLL TO TOP BUTTON***************************************************/
+#scrollBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 1em; /* Place the button at the bottom of the page */
+    right: 1em; /* Place the button 30px from the right */
+    z-index: 100000000000000; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #202022;
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    font-size: 1em; /* Increase font size */
+  }
+  
+#scrollBtn:hover {
+    background-color: #29292c; /* Add a dark-grey background on hover */
+}
+
+/*******************************NAV MOBILE ***************************************************/
+.mobile-menu{
+    height: 100vh;
+    width: 100vw;
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: #dfc534;
+    opacity: 1;
+    padding: 1em 1em;
+    display: none;
+    transition: 1s ease;
+
+    .close-icon {
+        cursor:pointer;
+        i { 
+            position: fixed;
+            right:0;
+            padding: 0.5em 1em;
+            
+            font: {
+                size: 3em;
+               
+            }
+            color: $darkest-black;
+        }
+    }
+    
+    ul {
+        height: 100vh;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        li {
+            font: {
+                size: 3em;
+                weight: 600;
+            }
+            line-height: 1.5;
+            color: $darkest-black;
+            cursor: pointer;
+        }
+    }
+}
+
+/*******************************TECH STACK***************************************************/
+
+.stack-section {
+    @include center-row;
+    .tiles-container{
+        @include center-row;
+        flex-wrap: wrap;
+        .tech-stack-tile {
+            margin-right: 0.93em;
+            margin-bottom: 1em;
+            width: 130px;
+            height: 130px;
+            background-color: $grayish-black;
+    
+            @include center-column;
+    
+            i {
+                font-size: 70px;
+            }
+    
+            img {
+                width: 80px;
+            }
+        }
+    }
+    margin-bottom: 5em;
+    
+}
+
+/*******************************PROJECTS***************************************************/
+.projects {
+    margin-bottom: 6em;
+}
+.project-tiles-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project-tile {
+    
+    background-color: $grayish-black;
+    width: 300px;
+    height: 300px;   
+
+    @include center-column();
+    align-items: flex-start;
+
+    p {
+        word-wrap: break-word;
+        font-size: 0.9em;
+    }
+
+    h2 {
+        font-size: 3em;
+        margin: 0.3em 0;
+    }
+
+    display: flex;
+    padding: 2em 2em;
+
+    .link-website {
+        font-size: 0.8em;
+        margin: 1.7em 0 0 0;
+
+        i {margin-right: 1em;}
+    }
+    margin-bottom: 2em;
+}
+
+.tech-tag {
+    font-weight: 550;
+    color: $darkest-black;
+    padding: 0.2em 0.6em;
+    border-radius: 5px;
+
+    font-size: 0.6em;
+}
+
+.tag-1 {
+    background-color: $violet;
+}
+
+.tag-2 {
+    background-color: $yellow;
+}
+
+.tag-3 {
+    background-color: $pink;
+}
+
+.tag-4 {
+    background-color: $green;
+}
+
+.tag-5 {
+    background-color: $red;
+}
+
+.tag-6 {
+    background-color: $bright-blue;
+}
+
+
+/*******************************CERTIFICATIONS***************************************************/
+.certifications {
+    margin-bottom: 6em;
+}
+
+
+
+/*******************************FOOTER***************************************************/
+footer {
+    background-color: $grayish-black;
+    width: 100%;
+    padding: 0.7em 0;
+    text-align: center;
+    h3 {
+        font-weight: 400;
+        font-size: 0.9em;
+        line-height: 21px;
+    }
+}
+
+
+
+
+/*******************************CONTACT***************************************************/
+.contact {
+    margin-bottom: 6em;
+}
+
+/*******************************CONTACT***************************************************/
+.contact {
+    @include center-row;
+    flex-wrap: wrap;
+    
+    .form-cap {
+        width: 50%;
+    }
+    .form-container {
+        width:50%;
+    }
+    form {
+        margin: {
+            top: 3em;
+            bottom: 2em;
+        }
+    }
+}
+
+.social-links {
+    font-size: 1.8em;
+    i {
+        margin-right: 1em;
+        cursor: pointer;
+    }
+}
+
+.info {
+    p {
+        font-size: 1.1em;
+        font-weight: 300;
+    }
+}
+
+.contact-form {
+    input,textarea {
+        width: 85%;
+        background-color: $darkest-black;
+        margin-bottom: 1em;
+        border:0;
+        border-bottom: 2px solid #fff;
+        font-family: 'Rubik', sans-serif;
+        font-size: 1.2em;
+        font-weight: 300;
+        color: #fff;
+    }
+    input:focus,textarea:focus {
+        outline:none;
+    }
+
+    button {
+        margin: 2em 0 2em 0;
+        width: 7em;
+        height: 3em;  
+        font-size:0.9em;
+        border: none; 
+        cursor:pointer;
+    }
+
+    button:active {
+        transform: scale(0.94);
+    }
+    ::placeholder {
+        color: white;
+        font-family: 'Rubik', sans-serif;
+        opacity: 0.8;
+    }
+}
+
+.form-cap {
+    @include center-column();
+    align-items: flex-start;
+    padding-bottom: 3em;
+    h1 {
+        font-size: 2.7em;
+        line-height: 3;
+    }
+    h2 {
+        font-size: 2em;
+        font-weight: 300;
+    }
+}
+
+
+/*******************************MEDIA QUERIES***************************************************/
+@media only screen and (max-width: 1000px) {
+    .tiles-container {
+        justify-content: center;
+        align-items: center;
+        .tech-stack-tile {
+            margin: 0 1em 2em 1em;
+        }
+    }
+    .contact {
+        div {
+            width: 100%;
+        }
+        .form-cap {
+            margin-bottom: 2em;
+            width: 100%;
+        }
+        .form-container {
+            width:100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 630px){
+    nav {
+        a {
+            display: block;
+            font-size: 1.5em;
+        }
+        ul {
+            display: none;
+        }
+    }
+}
+
