@@ -1,0 +1,85 @@
+.contact {
+    margin-bottom: 6em;
+}
+
+.contact {
+    @include center-row;
+    flex-wrap: wrap;
+    
+    .form-cap {
+        width: 50%;
+    }
+    .form-container {
+        width:50%;
+    }
+    form {
+        margin: {
+            top: 3em;
+            bottom: 2em;
+        }
+    }
+}
+
+.social-links {
+    font-size: 1.8em;
+    i {
+        margin-right: 1em;
+        cursor: pointer;
+    }
+}
+
+.info {
+    p {
+        font-size: 1.1em;
+        font-weight: 300;
+    }
+}
+
+.contact-form {
+    input,textarea {
+        width: 85%;
+        background-color: $darkest-black;
+        margin-bottom: 1em;
+        border:0;
+        border-bottom: 2px solid #fff;
+        font-family: 'Rubik', sans-serif;
+        font-size: 1.2em;
+        font-weight: 300;
+        color: #fff;
+    }
+    input:focus,textarea:focus {
+        outline:none;
+    }
+
+    button {
+        margin: 2em 0 2em 0;
+        width: 7em;
+        height: 3em;  
+        font-size:0.9em;
+        border: none; 
+        cursor:pointer;
+    }
+
+    button:active {
+        transform: scale(0.94);
+    }
+    ::placeholder {
+        color: white;
+        font-family: 'Rubik', sans-serif;
+        opacity: 0.8;
+    }
+}
+
+.form-cap {
+    @include center-column();
+    align-items: flex-start;
+    padding-bottom: 3em;
+    h1 {
+        font-size: 2.7em;
+        line-height: 3;
+    }
+    h2 {
+        font-size: 2em;
+        font-weight: 300;
+    }
+}

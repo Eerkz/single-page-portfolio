@@ -1,0 +1,61 @@
+
+/*******************************NAV SECTION***************************************************/
+
+
+nav {
+    @include center-in-between();
+    ul  {
+        list-style: none;
+        display: flex;
+
+        li {
+            padding: 1em 1em;
+            cursor: pointer;
+        }
+    }
+    padding: 2em 0;
+
+    a.hamburger {
+        display: none;
+    }
+}
+.logo {
+    @include center-in-between();
+    img {
+        width: 30px;
+        border-radius: 50%;
+        margin-right: 1em;
+
+    }
+    h3 {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.3em;
+        line-height: 31px;
+
+        span {
+            font-weight: bold;
+        }
+    }
+}
+
+.hero-section {
+
+    @include center-column-start;
+    height: 450px;
+    width: 100%;
+
+    h1 {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 4.5em;
+        line-height: 100px;
+        color: white;
+        // color: #dfc534;
+    }
+    p {
+        font-weight: 300;
+        font-size: 1.2em;
+        line-height: 1.7em;
+    }
+}

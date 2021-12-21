@@ -1,0 +1,49 @@
+/*******************************NAV MOBILE ***************************************************/
+.mobile-menu{
+    height: 100vh;
+    width: 100vw;
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: #dfc534;
+    opacity: 1;
+    padding: 1em 1em;
+    display: none;
+    transition: 1s ease;
+
+    .close-icon {
+        cursor:pointer;
+        i { 
+            position: fixed;
+            right:0;
+            padding: 0.5em 1em;
+            
+            font: {
+                size: 3em;
+               
+            }
+            color: $darkest-black;
+        }
+    }
+    
+    ul {
+        height: 100vh;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        li {
+            font: {
+                size: 3em;
+                weight: 600;
+            }
+            line-height: 1.5;
+            color: $darkest-black;
+            cursor: pointer;
+        }
+    }
+}
+

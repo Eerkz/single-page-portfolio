@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@import "variables";
+@import "mixins";
+@import "details";
+@import "nav";
+@import "sectionStack";
+@import "sectionProjects";
+@import "sectionCertificates";
+@import "sectionContact";
+@import "mediaQueries";
+
+
+* {
+    box-sizing: 0;
+    margin:0;
+    padding:0;
+    font-family: 'Rubik', sans-serif;
+}
+
+/***************************************BODY*******************************************/
+html {
+    scroll-behavior: smooth;
+  }
+body {
+    @include center-column();
+    font-size: 16px; //base-size
+    background-color: $darkest-black;
+    color: white;
+    font-weight: 300;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    overflow-x: hidden;
+}
+
+main {
+    width: 85vw;
+    z-index: 1;
+}
+
+
+
+
+/*******************************FOOTER***************************************************/
+footer {
+    background-color: $grayish-black;
+    width: 100%;
+    padding: 0.7em 0;
+    text-align: center;
+    h3 {
+        font-weight: 400;
+        font-size: 0.9em;
+        line-height: 21px;
+    }
+}

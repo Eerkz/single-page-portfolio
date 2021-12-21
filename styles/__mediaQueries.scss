@@ -1,0 +1,44 @@
+@media only screen and (max-width: 1000px) {
+    a.hamburger {
+        display: block;
+    }
+
+    .tiles-container {
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .flip-container {
+        margin-bottom: 1em;
+    }
+    .contact {
+        div {
+            width: 100%;
+        }
+        .form-cap {
+            margin-bottom: 2em;
+            width: 100%;
+        }
+        .form-container {
+            width:100%;
+        }
+    }
+
+    
+}
+
+@media only screen and (max-width: 630px){
+    a.hamburger {
+        display: block;
+    }
+    nav {
+        a.hamburger {
+            display: block;
+            font-size: 1.5em;
+        }
+        ul {
+            display: none;
+        }
+    }
+}
+

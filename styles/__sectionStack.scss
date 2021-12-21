@@ -1,0 +1,97 @@
+
+.stack-section {
+    @include center-row;
+    .tiles-container{
+        @include center-row;
+        flex-wrap: wrap;
+        .tech-stack-tile {
+            
+            margin-bottom: 1em;
+            width: 130px;
+            height: 130px;
+            background-color: $grayish-black;
+    
+            @include center-column;
+    
+            i {
+                font-size: 70px;
+            }
+    
+            img {
+                width: 80px;
+            }
+        }
+    }
+    margin-bottom: 5em;
+}
+.flip-container {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin-right: 0.94em;
+}
+
+.flipper {
+   
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+.front-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.back-content {
+    @include center-column();
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background: $gray;
+    color: black;
+    font-weight: 500;
+    font-size: 0.9em;
+    
+}
+
+.flipper:hover {
+    transform: rotateY(180deg);
+}
+
+.back-card-2 {
+    background-color: $yellow;
+}
+
+.back-card-3 {
+    background-color: $pink;
+}
+
+.back-card-4 {
+    background-color: $violet;
+}
+
+.back-card-5 {
+    background-color: $green;
+}
+
+.back-card-6 {
+    background-color: $red;
+}
+
+.back-card-7 {
+    background-color: $bright-blue;
+}
+
+.back-card-8 {
+    background-color: $yellow;
+}

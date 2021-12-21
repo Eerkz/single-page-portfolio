@@ -1,0 +1,51 @@
+
+/*******************************SCROLLBAR***************************************************/
+
+::-webkit-scrollbar {
+    width: 1em;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #dfc534; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $grayish-black; ; 
+   
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $grayish-black; 
+  }
+
+
+/*******************************DIVIDERS***************************************************/
+hr.solid {
+    border-top: 0.3px solid white;
+    margin: 0 0 4em 0;
+    width: 80%;
+  }
+.divider {
+    @Include center-column();
+}
+
+.hr-divider {
+    height: 2px;
+    background-color: white;
+    width:100%;
+    margin: 1.5em 0 4.8em 0;
+}
+.divider-number{
+    font-size: 1.2em;
+    font-weight: 500;
+    line-height: 31px;
+    margin-right: 1em;
+    
+}
+.divider-title {
+    font-size: 1.2em;
+    font-weight: 500;
+}
