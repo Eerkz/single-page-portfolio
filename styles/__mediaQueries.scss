@@ -1,3 +1,15 @@
+@media only screen and (max-width: 1300px){
+    .tiles-container {
+        width: 100%;
+    }
+
+    .project-tile {
+        flex: 50%;
+        height: 150px;
+    }
+}
+
+
 @media only screen and (max-width: 1000px) {
     a.hamburger {
         display: block;
@@ -7,9 +19,6 @@
         justify-content: center;
         align-items: center;
         
-    }
-    .flip-container {
-        margin-bottom: 1em;
     }
     .contact {
         div {
@@ -28,6 +37,26 @@
 }
 
 @media only screen and (max-width: 630px){
+    .mobile-menu {
+        padding:0;
+
+        ul {   
+            li {
+                font: {
+                    size: 2em;
+                }
+            }
+        }
+    }
+    .close-icon > i{
+        margin-right: 0.2em;
+    }
+    .project-tile {
+        height: 200px;
+    }
+    main {
+        width: 100vw;
+    }
     a.hamburger {
         display: block;
     }
@@ -40,5 +69,57 @@
             display: none;
         }
     }
+    .form-cap {
+        @include center-column;
+        h1 {
+            font-size: 2em;
+
+            line-height: 1.7;
+        }
+        h2 {
+            font-size: 1.6em;
+        }
+    }
 }
 
+@media only screen and (max-width: 450px) {
+    body, main {width: 100vw;}
+    .hamburger{
+        padding-right: 1em;
+    }
+    .project-tile {
+        width: 100%;
+        height: 200px;
+
+        h2 {
+            font-size: 2em;
+        }
+    }
+    .contact-form,.form-cap,.form-container{
+        width: 100vw;
+    }
+    
+}
+
+@media only screen and (max-width: 370px) {
+    .project-tile {
+        margin-right: 0;
+    }
+
+    nav {
+        width: 100vw;
+        div {
+            padding-left: 2em;
+        }
+        
+    }
+    .logo {
+        h3 {
+
+            font-size: 1.1em;
+
+        }
+    }
+
+    
+}

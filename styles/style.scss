@@ -1,20 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
-@import "variables";
-@import "mixins";
-@import "details";
-@import "nav";
-@import "sectionStack";
-@import "sectionProjects";
-@import "sectionCertificates";
-@import "sectionContact";
-@import "mediaQueries";
+// @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;700;900&display=swap');
+@import "./_variables";
+@import "./_mixins";
+@import "./_details";
+@import "./_nav";
+@import "./_sectionStack";
+@import "./_sectionProjects";
+@import "./_sectionCertificates";
+@import "./_sectionContact";
+@import "./_sectionHero";
+@import "./_scroll";
+@import "./_mobileNav";
+@import "./_mediaQueries";
+
 
 
 * {
     box-sizing: 0;
     margin:0;
     padding:0;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /***************************************BODY*******************************************/
@@ -38,14 +43,18 @@ body {
 main {
     width: 85vw;
     z-index: 1;
+    @include center-column;
+    position: relative;
+    overflow-x: hidden;
 }
-
 
 
 
 /*******************************FOOTER***************************************************/
 footer {
     background-color: $grayish-black;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
     width: 100%;
     padding: 0.7em 0;
     text-align: center;

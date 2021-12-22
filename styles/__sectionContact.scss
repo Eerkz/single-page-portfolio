@@ -5,7 +5,7 @@
 .contact {
     @include center-row;
     flex-wrap: wrap;
-    
+    width: 100%;
     .form-cap {
         width: 50%;
     }
@@ -52,6 +52,8 @@
     }
 
     button {
+        background-color: white;
+        
         margin: 2em 0 2em 0;
         width: 7em;
         height: 3em;  

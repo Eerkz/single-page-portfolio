@@ -1,0 +1,91 @@
+.hero-section {
+  @include center-column;
+  width: 100%;
+  min-height: 80vh;
+  margin-top: 80px;
+
+  p {
+    color: $yellow;
+    font-weight: 500;
+    font-size: 5vw;
+    font-family: 'Inter', sans-serif;
+  }
+  .name-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 6vw;
+    line-height: 1;
+    // color: #dfc534;
+  }
+}
+
+
+
+button {
+    margin-top: 2em;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: 4px solid $yellow;
+    background: transparent;
+    &.learn-more {
+      width: 10em;
+      height: auto;
+      .border-left {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+        position: relative;
+        display: block;
+        margin: 0;
+        width: 1em;
+        height: 2.5em;
+        background: $yellow;
+        color: $yellow;
+        overflow: hidden;
+        i {
+          @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+          top: 0.37em;
+          position: absolute;
+          font-size: 1.3em;
+          left: -8px;
+        }
+      }
+      .button-text {
+        a {
+          @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+          position: absolute;
+          top: 0.28em;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: 0 0 0 1em;
+          color: $yellow;
+          font-weight: 700;
+          font-size: 1.3em;
+          text-align: center;
+        }
+      }
+    }
+    &:hover {
+      .border-left {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+          @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+          color: $darkest-black;
+          transform: translate(1.5em, 0);
+        }
+      }
+      .button-text {
+        a{
+          color: $darkest-black;
+        }
+      }
+    }
+  }
+
+
+
+  ////////////////
+  

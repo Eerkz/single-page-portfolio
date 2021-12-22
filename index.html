@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/cursor.css">
     <link rel='stylesheet' href="styles/style.css">
 </head>
 <body>
@@ -20,7 +21,7 @@
         </ul>
     </div>
     <main>
-        <nav>
+        <nav id="nav-bar">
             <div class="logo">
                 <img src='./img/1605374496918.jpg'>
                 <h3>wilms.<span>dev</span></h3>
@@ -37,18 +38,24 @@
             </a>
         </nav>
         
-    
+
         <section class="hero-section" id="section-1">
-            <h1>Hello,I'm Wilma.</h1>
-            <p>I'm a 3rd year engineering student from</p>
-            <p>UP Diliman. I'm a self-taught web developer and</p>
-            <p>aspiring to be full-stack</p>
+            <h1 class= "name-title">Yo, I'm Wilma.</h1>
+            <p>I'm a self-taught developer.</p>
+            <div id="btn-resume-container">
+                <button class="learn-more">
+                  <span class="border-left" aria-hidden="true">
+                    <i class="fas fa-file-download"></i>
+                  </span>
+                  <span class="button-text"><a href="./RESUME - Wilma Alemios.pdf" download>Resume</a></span>
+                </button>
+              </div>
         </section>
 
-       <div class="divider">
+       <!-- <div class="divider">
             <div class="hr-divider-text"><span class="divider-number">01 </span><span class="divider-title">TECH STACK</span></div>
             <div class="hr-divider"></div>
-       </div>
+       </div> -->
        
         <section class="stack-section" id="section-2">
             <div class="tiles-container">
@@ -149,65 +156,61 @@
 
        <section class="projects"  id="section-3">
             <div class="project-tiles-container">
-                <div class="row row-1">
-                    <div class="project-tile">
-                        <div class="tech-tag tag-1">REST API</div>
-                        <h2>Rest API Projects</h2>
-                        <p>Showcase of my understanding with Rest API.</p>
-                        <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
-                    </div>
-                    <div class="project-tile">
-                        <div class="tech-tag tag-2">REST API</div>
-                        <h2>Rest API Projects</h2>
-                        <p>Showcase of my understanding with Rest API.</p>
-                        <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
-                    </div>
-                    <div class="project-tile ">
-                        <div class="tech-tag tag-3">REST API</div>
-                        <h2>Rest API Projects</h2>
-                        <p>Showcase of my understanding with Rest API.</p>
-                        <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
-                    </div>
+                <div class="project-tile">
+                    <div class="tech-tag tag-1">REST API</div>
+                    <h2>Rest API Projects</h2>
+                    <p>Showcase of my understanding with Rest API.</p>
+                    <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
                 </div>
-                <div class="row row-2">
-                    <div class="project-tile">
-                        <div class="tech-tag tag-4">REST API</div>
-                        <h2>Rest API Projects</h2>
-                        <p>Showcase of my understanding with Rest API.</p>
-                        <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
-                    </div>
-                    <div class="project-tile">
-                        <div class="tech-tag tag-5">REST API</div>
-                        <h2>Rest API Projects</h2>
-                        <p>Showcase of my understanding with Rest API.</p>
-                        <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
-                    </div>
-                    <div class="project-tile ">
-                        <div class="tech-tag tag-6">REST API</div>
-                        <h2>Rest API Projects</h2>
-                        <p>Showcase of my understanding with Rest API.</p>
-                        <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
-                    </div>
+                <div class="project-tile">
+                    <div class="tech-tag tag-2">REST API</div>
+                    <h2>Rest API Projects</h2>
+                    <p>Showcase of my understanding with Rest API.</p>
+                    <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
                 </div>
-                <div class="row row-3">
-                    <div class="project-tile">
-                        <div class="tech-tag tag-1">REST API</div>
-                        <h2>Rest API Projects</h2>
-                        <p>Showcase of my understanding with Rest API.</p>
-                        <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
-                    </div>
-                    <div class="project-tile">
-                        <div class="tech-tag tag-3">REST API</div>
-                        <h2>Rest API Projects</h2>
-                        <p>Showcase of my understanding with Rest API.</p>
-                        <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
-                    </div>
-                    <div class="project-tile ">
-                        <div class="tech-tag tag-4">REST API</div>
-                        <h2>Rest API Projects</h2>
-                        <p>Showcase of my understanding with Rest API.</p>
-                        <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
-                    </div>
+                <div class="project-tile ">
+                    <div class="tech-tag tag-3">REST API</div>
+                    <h2>Rest API Projects</h2>
+                    <p>Showcase of my understanding with Rest API.</p>
+                    <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
+                </div>
+
+    
+                <div class="project-tile">
+                    <div class="tech-tag tag-4">REST API</div>
+                    <h2>Rest API Projects</h2>
+                    <p>Showcase of my understanding with Rest API.</p>
+                    <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
+                </div>
+                <div class="project-tile">
+                    <div class="tech-tag tag-5">REST API</div>
+                    <h2>Rest API Projects</h2>
+                    <p>Showcase of my understanding with Rest API.</p>
+                    <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
+                </div>
+                <div class="project-tile ">
+                    <div class="tech-tag tag-6">REST API</div>
+                    <h2>Rest API Projects</h2>
+                    <p>Showcase of my understanding with Rest API.</p>
+                    <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
+                </div>
+                <div class="project-tile">
+                    <div class="tech-tag tag-1">REST API</div>
+                    <h2>Rest API Projects</h2>
+                    <p>Showcase of my understanding with Rest API.</p>
+                    <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
+                </div>
+                <div class="project-tile">
+                    <div class="tech-tag tag-3">REST API</div>
+                    <h2>Rest API Projects</h2>
+                    <p>Showcase of my understanding with Rest API.</p>
+                    <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
+                </div>
+                <div class="project-tile ">
+                    <div class="tech-tag tag-4">REST API</div>
+                    <h2>Rest API Projects</h2>
+                    <p>Showcase of my understanding with Rest API.</p>
+                    <div class="link-website"><i class="fas fa-link"></i><a href="#">See website</a></div>
                 </div>
             </div>
        </section>
@@ -260,6 +263,7 @@
     <footer>
         <h3>@Copyright Wilma Alemios 2021</h3>
     </footer>
+    <script src="src/cursor.js"></script>
     <script src="src/app.js"></script>
 </body>
 </html>

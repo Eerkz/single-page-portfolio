@@ -1,22 +1,22 @@
 .projects {
-    margin-bottom: 6em;
+    @include center-row;
 }
 .project-tiles-container {
-    display: flex;
-    flex-direction: column;
+    @include center-row;
     flex-wrap: wrap;
-
+    margin-bottom: 5em;
+    
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-}
 
 .project-tile {
-    
+    margin-right: 1em;
+    &:hover {
+        transform: scale(1.03);
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    }
+
+    transition: 0.3s ease;
     background-color: $grayish-black;
     width: 300px;
     height: 300px;   
@@ -43,7 +43,9 @@
 
         i {margin-right: 1em;}
     }
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    
+    
 }
 
 .tech-tag {

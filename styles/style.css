@@ -1,48 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
-* {
-  -webkit-box-sizing: 0;
-          box-sizing: 0;
-  margin: 0;
-  padding: 0;
-  font-family: 'Rubik', sans-serif;
-}
-
-/***************************************BODY*******************************************/
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 16px;
-  background-color: #151515;
-  color: white;
-  font-weight: 300;
-  overflow-x: hidden;
-}
-
-body a {
-  text-decoration: none;
-  color: white;
-}
-
-main {
-  width: 85vw;
-  z-index: 1;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;700;900&display=swap");
 /*******************************SCROLLBAR***************************************************/
 ::-webkit-scrollbar {
   width: 1em;
@@ -56,6 +12,8 @@ main {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #202022;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
 /* Handle on hover */
@@ -108,7 +66,24 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 2em 0;
+  /*Define a height for NavBar*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 213213;
+  width: 100%;
+  height: 80px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  /*and a transition time for a smooth appearence*/
+}
+
+nav div {
+  padding-left: 4em;
+}
+
+nav .hamburger {
+  padding-right: 2em;
 }
 
 nav ul {
@@ -116,11 +91,45 @@ nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-right: 4em;
 }
 
 nav ul li {
   padding: 1em 1em;
+}
+
+nav ul li a {
+  font-weight: 400;
   cursor: pointer;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: #FFDE5B;
+}
+
+nav ul li a:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  background: #FFDE5B;
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  transition: transform 0.35s, -webkit-transform 0.35s;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+nav ul li a:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 nav a.hamburger {
@@ -160,127 +169,6 @@ nav a.hamburger {
   font-weight: bold;
 }
 
-.hero-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  height: 450px;
-  width: 100%;
-}
-
-.hero-section h1 {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 4.5em;
-  line-height: 100px;
-  color: white;
-}
-
-.hero-section p {
-  font-weight: 300;
-  font-size: 1.2em;
-  line-height: 1.7em;
-}
-
-/*******************************SCROLL TO TOP BUTTON***************************************************/
-#scrollBtn {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Fixed/sticky position */
-  bottom: 1em;
-  /* Place the button at the bottom of the page */
-  right: 1em;
-  /* Place the button 30px from the right */
-  z-index: 2;
-  /* Make sure it does not overlap */
-  border: none;
-  /* Remove borders */
-  outline: none;
-  /* Remove outline */
-  background-color: #202022;
-  color: white;
-  /* Text color */
-  cursor: pointer;
-  /* Add a mouse pointer on hover */
-  padding: 15px;
-  /* Some padding */
-  font-size: 1em;
-  /* Increase font size */
-}
-
-#scrollBtn:hover {
-  background-color: #29292c;
-  /* Add a dark-grey background on hover */
-}
-
-/*******************************NAV MOBILE ***************************************************/
-.mobile-menu {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  /* Stay in place */
-  z-index: 2;
-  /* Sit on top */
-  left: 0;
-  top: 0;
-  background-color: #dfc534;
-  opacity: 1;
-  padding: 1em 1em;
-  display: none;
-  -webkit-transition: 1s ease;
-  transition: 1s ease;
-}
-
-.mobile-menu .close-icon {
-  cursor: pointer;
-}
-
-.mobile-menu .close-icon i {
-  position: fixed;
-  right: 0;
-  padding: 0.5em 1em;
-  font-size: 3em;
-  color: #151515;
-}
-
-.mobile-menu ul {
-  height: 100vh;
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.mobile-menu ul li {
-  font-size: 3em;
-  font-weight: 600;
-  line-height: 1.5;
-  color: #151515;
-  cursor: pointer;
-}
-
-/*******************************TECH STACK***************************************************/
 .stack-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -337,6 +225,7 @@ nav a.hamburger {
   width: 130px;
   height: 130px;
   margin-right: 0.94em;
+  margin-bottom: 1em;
 }
 
 .flipper {
@@ -346,6 +235,8 @@ nav a.hamburger {
           transform-style: preserve-3d;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
 .front-content {
@@ -391,6 +282,8 @@ nav a.hamburger {
   color: black;
   font-weight: 500;
   font-size: 0.9em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
 .flipper:hover {
@@ -426,39 +319,33 @@ nav a.hamburger {
   background-color: #FFDE5B;
 }
 
-/*******************************PROJECTS***************************************************/
 .projects {
-  margin-bottom: 6em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .project-tiles-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 5em;
 }
 
 .project-tile {
+  margin-right: 1em;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
   background-color: #202022;
   width: 300px;
   height: 300px;
@@ -480,7 +367,14 @@ nav a.hamburger {
           align-items: flex-start;
   display: flex;
   padding: 2em 2em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+}
+
+.project-tile:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
 .project-tile p {
@@ -534,31 +428,14 @@ nav a.hamburger {
   background-color: #84F8FF;
 }
 
-/*******************************CERTIFICATIONS***************************************************/
 .certifications {
   margin-bottom: 6em;
 }
 
-/*******************************FOOTER***************************************************/
-footer {
-  background-color: #202022;
-  width: 100%;
-  padding: 0.7em 0;
-  text-align: center;
-}
-
-footer h3 {
-  font-weight: 400;
-  font-size: 0.9em;
-  line-height: 21px;
-}
-
-/*******************************CONTACT***************************************************/
 .contact {
   margin-bottom: 6em;
 }
 
-/*******************************CONTACT***************************************************/
 .contact {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -569,6 +446,7 @@ footer h3 {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 100%;
 }
 
 .contact .form-cap {
@@ -615,6 +493,7 @@ footer h3 {
 }
 
 .contact-form button {
+  background-color: white;
   margin: 2em 0 2em 0;
   width: 7em;
   height: 3em;
@@ -682,7 +561,217 @@ footer h3 {
   font-weight: 300;
 }
 
-/*******************************MEDIA QUERIES***************************************************/
+.hero-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  min-height: 80vh;
+  margin-top: 80px;
+}
+
+.hero-section p {
+  color: #FFDE5B;
+  font-weight: 500;
+  font-size: 5vw;
+  font-family: 'Inter', sans-serif;
+}
+
+.hero-section .name-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 6vw;
+  line-height: 1;
+}
+
+button {
+  margin-top: 2em;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  border: 4px solid #FFDE5B;
+  background: transparent;
+}
+
+button.learn-more {
+  width: 10em;
+  height: auto;
+}
+
+button.learn-more .border-left {
+  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 1em;
+  height: 2.5em;
+  background: #FFDE5B;
+  color: #FFDE5B;
+  overflow: hidden;
+}
+
+button.learn-more .border-left i {
+  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  top: 0.37em;
+  position: absolute;
+  font-size: 1.3em;
+  left: -8px;
+}
+
+button.learn-more .button-text a {
+  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0.28em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 0 0 1em;
+  color: #FFDE5B;
+  font-weight: 700;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+button:hover .border-left {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+button:hover .border-left i {
+  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  color: #151515;
+  -webkit-transform: translate(1.5em, 0);
+          transform: translate(1.5em, 0);
+}
+
+button:hover .button-text a {
+  color: #151515;
+}
+
+/*******************************SCROLL TO TOP BUTTON***************************************************/
+#scrollBtn {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 1em;
+  /* Place the button at the bottom of the page */
+  right: 1em;
+  /* Place the button 30px from the right */
+  z-index: 2;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: #202022;
+  color: white;
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 15px;
+  /* Some padding */
+  font-size: 1em;
+  /* Increase font size */
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+#scrollBtn:hover {
+  background-color: #29292c;
+  /* Add a dark-grey background on hover */
+}
+
+/*******************************NAV MOBILE ***************************************************/
+.mobile-menu {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  /* Stay in place */
+  z-index: 2;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: #dfc534;
+  opacity: 1;
+  padding: 1em 1em;
+  display: none;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+.mobile-menu .close-icon {
+  cursor: pointer;
+}
+
+.mobile-menu .close-icon i {
+  position: fixed;
+  right: 0;
+  padding: 0.5em 1em;
+  font-size: 3em;
+  color: #151515;
+}
+
+.mobile-menu ul {
+  height: 100vh;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobile-menu ul li {
+  font-size: 3em;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #151515;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1300px) {
+  .tiles-container {
+    width: 100%;
+  }
+  .project-tile {
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+    height: 150px;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   a.hamburger {
     display: block;
@@ -694,9 +783,6 @@ footer h3 {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-  .flip-container {
-    margin-bottom: 1em;
   }
   .contact div {
     width: 100%;
@@ -711,6 +797,21 @@ footer h3 {
 }
 
 @media only screen and (max-width: 630px) {
+  .mobile-menu {
+    padding: 0;
+  }
+  .mobile-menu ul li {
+    font-size: 2em;
+  }
+  .close-icon > i {
+    margin-right: 0.2em;
+  }
+  .project-tile {
+    height: 200px;
+  }
+  main {
+    width: 100vw;
+  }
   a.hamburger {
     display: block;
   }
@@ -721,5 +822,136 @@ footer h3 {
   nav ul {
     display: none;
   }
+  .form-cap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .form-cap h1 {
+    font-size: 2em;
+    line-height: 1.7;
+  }
+  .form-cap h2 {
+    font-size: 1.6em;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  body, main {
+    width: 100vw;
+  }
+  .hamburger {
+    padding-right: 1em;
+  }
+  .project-tile {
+    width: 100%;
+    height: 200px;
+  }
+  .project-tile h2 {
+    font-size: 2em;
+  }
+  .contact-form, .form-cap, .form-container {
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .project-tile {
+    margin-right: 0;
+  }
+  nav {
+    width: 100vw;
+  }
+  nav div {
+    padding-left: 2em;
+  }
+  .logo h3 {
+    font-size: 1.1em;
+  }
+}
+
+* {
+  -webkit-box-sizing: 0;
+          box-sizing: 0;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/***************************************BODY*******************************************/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 16px;
+  background-color: #151515;
+  color: white;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+body a {
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  width: 85vw;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/*******************************FOOTER***************************************************/
+footer {
+  background-color: #202022;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  width: 100%;
+  padding: 0.7em 0;
+  text-align: center;
+}
+
+footer h3 {
+  font-weight: 400;
+  font-size: 0.9em;
+  line-height: 21px;
 }
 /*# sourceMappingURL=style.css.map */
