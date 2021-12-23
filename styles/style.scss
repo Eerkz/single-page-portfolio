@@ -1,71 +1,29 @@
-// @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;700;900&display=swap');
-@import "./_variables";
-@import "./_intro";
-@import "./_mixins";
-@import "./_cursor";
-@import "./_nav";
-@import "./_sectionStack";
-@import "./_sectionProjects";
-@import "./_sectionCertificates";
-@import "./_sectionContact";
-@import "./_sectionHero";
-@import "./_scroll";
-@import "./_mobileNav";
-@import "./_details";
-@import "./_typing";
-@import "./_mediaQueries";
+
+@import './abstracts/_variables';
+@import './abstracts/_mixins';
 
 
+@import './layout/_hero';
+@import './layout/_stack';
+@import  './layout/_projects';
+@import './layout/_certifications';
+@import './layout/_contact';
+@import './layout/_footer';
 
-* {
-    box-sizing: 0;
-    margin:0;
-    padding:0;
-    font-family: 'Inter', sans-serif;
-}
+@import './components/_cursor';
+@import './components/_details';
+@import './components/_mobileNav';
+@import './components/_nav';
+@import './components/_scroll';
+@import './components/_typing';
+@import './components/_modal';
+@import './components/_form';
+@import './components/_techTile';
 
-/***************************************BODY*******************************************/
-html {
-    scroll-behavior: smooth;
-  }
-body {
-    @include center-column();
-    font-size: 16px; //base-size
-    background-color: $darkest-black;
-    color: white;
-    font-weight: 300;
+@import './pages/_home';
+@import './pages/_intro';
 
-    a {
-        text-decoration: none;
-        color: white;
-    }
-    overflow-x: hidden;
-    overflow: hidden;
-}
-
-main {
-    width: 85vw;
-    z-index: 1;
-    @include center-column;
-    position: relative;
-    overflow-x: hidden;
-    
-}
+@import './base/_mediaQueries';
 
 
-
-/*******************************FOOTER***************************************************/
-footer {
-    background-color: $grayish-black;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-
-    width: 100%;
-    padding: 0.7em 0;
-    text-align: center;
-    h3 {
-        font-weight: 400;
-        font-size: 0.9em;
-        line-height: 21px;
-    }
-}

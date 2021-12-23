@@ -104,9 +104,7 @@
     .close-icon > i{
         margin-right: 0.2em;
     }
-    .project-tile {
-        height: 200px;
-    }
+    
     main {
         width: 100vw;
     }
@@ -122,17 +120,25 @@
             display: none;
         }
     }
+    .projects {
+        .project-tiles-container {
+            .project-tile {
+                margin-left: 20px;
+            }
+        }
+    }
+    
     
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
     body, main {width: 100vw;}
     .hamburger{
         padding-right: 1em;
     }
     .project-tile {
         width: 100%;
-        height: 200px;
+        height: 130px;
 
         h2 {
             font-size: 2em;
@@ -145,8 +151,19 @@
 }
 
 @media only screen and (max-width: 370px) {
-    .project-tile {
-        margin-right: 0;
+    body {
+        overflow-x: hidden;
+    }
+    .projects {
+        .project-tiles-container {
+            .project-tile {
+                height: 170px;
+                margin-right:0;
+                margin-left:0;
+                
+            }
+            padding: 0 10px 0 10px;
+        }
     }
 
     nav {

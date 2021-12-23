@@ -10,8 +10,6 @@ const navLinks = document.querySelectorAll(".nav-link")
 const wrapper = document.querySelector('.wrapper');
 const body = document.querySelector("body");
 
-
-
 scrollBtn.addEventListener('click', ()=>{
     // console.log('ree')
     gsap.to(window, {duration:1, scrollTo:{y:0}});
@@ -22,12 +20,6 @@ navLinks.forEach((link, index) => {
     gsap.to(window, {duration: 1, scrollTo:{y:"#section" + (index+1), offsetY:70}});
   });
 });
-
-scrollBtn.addEventListener('click', ()=> {
-  gsap.to(window, {duration: 1, scrollTo:{y:0,offsetY:0}})
-})
-
-
 
 
 init_pointer();

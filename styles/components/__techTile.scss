@@ -1,29 +1,26 @@
-
-.stack-section {
+.tiles-container{
     @include center-row;
-    .tiles-container{
-        @include center-row;
-        flex-wrap: wrap;
-        .tech-stack-tile {
-            
-            margin-bottom: 1em;
-            width: 130px;
-            height: 130px;
-            background-color: $grayish-black;
-    
-            @include center-column;
-    
-            i {
-                font-size: 70px;
-            }
-    
-            img {
-                width: 80px;
-            }
+    flex-wrap: wrap;
+    .tech-stack-tile {
+        
+        margin-bottom: 1em;
+        width: 130px;
+        height: 130px;
+        background-color: $grayish-black;
+
+        @include center-column;
+
+        i {
+            font-size: 70px;
+        }
+
+        img {
+            width: 80px;
         }
     }
-    margin-bottom: 5em;
 }
+
+
 .flip-container {
     position: relative;
     width: 130px;

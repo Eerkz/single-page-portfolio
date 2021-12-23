@@ -1,0 +1,31 @@
+* {
+    box-sizing: 0;
+    margin:0;
+    padding:0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    @include center-column();
+    font-size: 16px; //base-size
+    background-color: $darkest-black;
+    color: white;
+    font-weight: 300;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    overflow-x: hidden;
+    overflow: hidden;
+}
+
+
+
+main {
+    width: 85vw;
+    z-index: 1;
+    @include center-column;
+    position: relative;
+    overflow-x: hidden;
+}

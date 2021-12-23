@@ -1,0 +1,50 @@
+.contact {
+    margin-bottom: 6em;
+}
+
+.contact {
+    @include center-row;
+    flex-wrap: wrap;
+    width: 100%;
+    .form-cap {
+        width: 50%;
+        @include center-column();
+        align-items: flex-start;
+        padding-bottom: 3em;
+        h1 {
+            font-size: 2.7em;
+            line-height: 3;
+        }
+        h2 {
+            font-size: 2em;
+            font-weight: 300;
+        }   
+    }
+    .form-container {
+        width:50%;
+    }
+    form {
+        margin: {
+            top: 3em;
+            bottom: 2em;
+        }
+    }
+}
+
+.social-links {
+    font-size: 1.8em;
+    i {
+        margin-right: 1em;
+        cursor: pointer;
+    }
+}
+
+.info {
+    p {
+        font-size: 1.1em;
+        font-weight: 300;
+    }
+}
+
+
+
