@@ -70,15 +70,14 @@ nav {
 .logo {
     @include center-in-between();
     img {
-        width: 30px;
-        border-radius: 50%;
+        width: 3em;
         margin-right: 1em;
 
     }
     h3 {
         font-style: normal;
         font-weight: normal;
-        font-size: 1.3em;
+        font-size: 1.2em;
         line-height: 31px;
 
         span {

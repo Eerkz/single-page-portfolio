@@ -6,6 +6,28 @@ const mobileMenuLinks = document.querySelector('.mobile-menu-links')
 const scrollBtn = document.getElementById("scrollBtn");
 const heroSection = document.querySelector('.hero-section')
 const navbar = document.getElementById('nav-bar');
+const navLinks = document.querySelectorAll(".nav-link")
+const wrapper = document.querySelector('.wrapper');
+const body = document.querySelector("body");
+
+
+
+scrollBtn.addEventListener('click', ()=>{
+    // console.log('ree')
+    gsap.to(window, {duration:1, scrollTo:{y:0}});
+})
+
+navLinks.forEach((link, index) => {
+  link.addEventListener("click", () => {
+    gsap.to(window, {duration: 1, scrollTo:{y:"#section" + (index+1), offsetY:70}});
+  });
+});
+
+scrollBtn.addEventListener('click', ()=> {
+  gsap.to(window, {duration: 1, scrollTo:{y:0,offsetY:0}})
+})
+
+
 
 
 init_pointer();
@@ -46,12 +68,6 @@ const topFunction = () => {
 }
 
 var lastScrollTop;
-console.log(window.scrollY)
-
-window.scroll({
-  behavior: 'smooth'
-});
-
 
 window.addEventListener('scroll', ()=> {
   let scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -71,3 +87,5 @@ window.addEventListener('scroll', ()=> {
   }
   lastScrollTop = scrollTop;
 });
+
+

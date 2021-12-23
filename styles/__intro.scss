@@ -1,0 +1,95 @@
+
+/////intro
+.wrapper {
+    position: fixed;
+    top:0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: $darkest-black;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000010321312300;
+    -webkit-animation: hideAnimation 0.5s ease-in 3s;
+            animation: hideAnimation 0.5s ease-in 3s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        
+  }
+  
+  .logo-main {
+    width: 200px;
+  }
+  
+  @-webkit-keyframes hideAnimation {
+    0% {
+      opacity: 100;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes hideAnimation {
+    0% {
+      opacity: 100;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .logo-main path:nth-child(1) {
+    stroke-dasharray: 136.78526306152344;
+    stroke-dashoffset: 136.78526306152344;
+    -webkit-animation: line-anim 2s ease forwards;
+            animation: line-anim 2s ease forwards;
+  }
+  
+  .logo-main path:nth-child(2) {
+    stroke-dasharray: 230.21888732910156;
+    stroke-dashoffset: 230.21888732910156;
+    -webkit-animation: line-anim 2s ease forwards;
+            animation: line-anim 2s ease forwards;
+  }
+  
+  .logo-main path:nth-child(3) {
+    stroke-dasharray: 108.55111694335938;
+    stroke-dashoffset: 108.55111694335938;
+    -webkit-animation: line-anim 2s ease forwards;
+            animation: line-anim 2s ease forwards;
+  }
+  
+  .logo-main path:nth-child(4) {
+    stroke-dasharray: 1115.4320068359375;
+    stroke-dashoffset: 1115.4320068359375;
+    -webkit-animation: line-anim 2s ease forwards;
+            animation: line-anim 2s ease forwards;
+  }
+  
+  .logo-main path:nth-child(5) {
+    stroke-dasharray: 464.0205078125;
+    stroke-dashoffset: 464.0205078125;
+    -webkit-animation: line-anim 3s ease forwards;
+            animation: line-anim 3s ease forwards;
+  }
+  
+  @-webkit-keyframes line-anim {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes line-anim {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  /*# sourceMappingURL=style.css.map */

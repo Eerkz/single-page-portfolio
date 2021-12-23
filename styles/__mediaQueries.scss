@@ -1,6 +1,10 @@
 @media only screen and (max-width: 1300px){
+
     .tiles-container {
         width: 100%;
+        justify-content: center;
+        align-items: center;
+        
     }
 
     .project-tile {
@@ -28,11 +32,6 @@
         display: block;
     }
 
-    .tiles-container {
-        justify-content: center;
-        align-items: center;
-        
-    }
     .contact {
         @include center-column;
         width: 100vw;

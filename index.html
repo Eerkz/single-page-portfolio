@@ -5,12 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/cursor.css">
     <link rel='stylesheet' href="styles/style.css">
 </head>
 <body>
-    <button onclick="topFunction()" id="scrollBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    <!-- pre loader -->
+    <div class="wrapper">
+        <div class="loader">
+            <svg class="logo-main" viewBox="0 0 417 271" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M336.864 127.744C345.425 120.055 363.61 103.001 367.861 96.2905C373.174 87.903 381.145 75.0221 381.735 53.7537C382.325 32.4853 373.174 10.6177 371.993 7.92175" stroke="#DFC534" stroke-width="10"/>
+                <path d="M170.1 31.8861L326.785 200.559" stroke="#DFC534" stroke-width="10"/>
+                <path d="M294.715 82.5801L369.851 160.925" stroke="#DFC534" stroke-width="10"/>
+                <path d="M140.371 235.039L7 92.3269C13.1663 85.4166 29.139 68.7718 43.6994 57.475C61.9 43.354 69.956 41.2509 91.4386 42.1523C108.625 42.8733 125.254 58.4765 131.42 66.188C140.769 57.2747 161.317 37.7056 168.716 30.7353C176.116 23.7649 184.53 19.6188 187.812 18.417C187.812 18.417 217.052 6.39911 244.204 28.9326L292.838 80.9099L371.011 7C378.967 14.411 396.492 32.4178 402.936 45.1567C410.992 61.0804 416.065 88.7215 407.71 112.156C401.027 130.904 387.819 145.406 382.05 150.313C354.203 176.552 296.717 230.592 289.556 236.842C280.605 244.653 275.831 249.16 260.017 256.671C244.204 264.182 218.842 268.99 192.586 263.882C171.581 259.796 149.024 242.951 140.371 235.039Z" stroke="#DFC534" stroke-width="10"/>
+                <path d="M43.6516 58.6157L156.542 178.822C164.307 186.516 184.787 201.875 203.729 206.1C227.92 211.496 258.98 207.299 258.98 207.299L132.351 67.6087" stroke="#DFC534" stroke-width="10"/>
+            </svg>
+        </div>
+   </div>
+
+    <!-- full page mobile menu -->
+    <button class="btn-top" id="scrollBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
     <div class="mobile-menu">
         <div class="close-icon"><i class="fas fa-times"></i></div>
         <ul class="mobile-menu-links">
@@ -20,17 +38,18 @@
             <li>contact</li>
         </ul>
     </div>
+    <!-- main content -->
     <main>
         <nav id="nav-bar">
             <div class="logo">
-                <img src='./img/1605374496918.jpg'>
+                <img src='./img/logo.svg'>
                 <h3>wilms.<span>dev</span></h3>
             </div>
             <ul class="wide-menu">
-                <li><a href="#section-2">about</a></li>
-                <li><a href="#section-3">projects</a></li>
-                <li><a href="#section-4">certifications</a></li>
-                <li><a href="#section-5">contact</a></li>
+                <li><a class="nav-link">about</a></li>
+                <li><a class="nav-link">projects</a></li>
+                <li><a class="nav-link">certifications</a></li>
+                <li><a class="nav-link">contact</a></li>
 
             </ul>
             <a href="#" class="hamburger">
@@ -38,8 +57,8 @@
             </a>
         </nav>
         
-
-        <section class="hero-section" id="section-1">
+        <!-- hero section -->
+        <section class="hero-section" id="section1">
             <h1 class= "name-title">Yo, I'm Wilma.</h1>
             
             <div class="type-effect">
@@ -55,12 +74,8 @@
               </div>
         </section>
 
-       <!-- <div class="divider">
-            <div class="hr-divider-text"><span class="divider-number">01 </span><span class="divider-title">TECH STACK</span></div>
-            <div class="hr-divider"></div>
-       </div> -->
-       
-        <section class="stack-section" id="section-2">
+       <!-- tech stack section -->
+        <section class="stack-section" id="section1">
             <div class="tiles-container">
                 <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                     <div class="tech-stack-tile flipper">
@@ -152,12 +167,13 @@
             </div>
         </section>
 
+        <!-- projects section -->
         <div class="divider">
             <div class="hr-divider-text"><span class="divider-number">02 </span><span class="divider-title">PROJECTS</span></div>
             <div class="hr-divider"></div>
        </div>
 
-       <section class="projects"  id="section-3">
+       <section class="projects"  id="section2">
             <div class="project-tiles-container">
                 <div class="project-tile">
                     <div class="tech-tag tag-1">REST API</div>
@@ -223,7 +239,7 @@
             <div class="hr-divider"></div>
         </div>
 
-        <section class="certifications"  id="section-4">
+        <section class="certifications"  id="section3">
             <!-- Slideshow container -->
            
 
@@ -234,7 +250,7 @@
             <div class="hr-divider"></div>
         </div>
 
-        <section class="contact" id="section-5">
+        <section class="contact" id="section4">
             <div class="form-cap">
                 <h1>Like what you see?</h1>
                 <h2>Let's have a litte chat.</h2>
@@ -266,8 +282,10 @@
     <footer>
         <h3>@Copyright Wilma Alemios 2021</h3>
     </footer>
-    <script src="./src/typing.js"></script>
     <script src="src/cursor.js"></script>
+    <script src ="./src/intro.js"></script>
+    <script src="./src/typing.js"></script>
+    
     <script src="src/app.js"></script>
 </body>
 </html>
