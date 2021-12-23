@@ -11,6 +11,19 @@
 
 
 @media only screen and (max-width: 1000px) {
+    .hero-section {
+        .type-effect {
+            font-size: 7vw;
+        }
+        .name-title {
+            font-size: 9vw;
+        }
+    }
+    .type-effect p span.cursor {
+        width: 2px;
+        height: 8vw;
+      }
+
     a.hamburger {
         display: block;
     }
@@ -21,22 +34,63 @@
         
     }
     .contact {
-        div {
-            width: 100%;
+        @include center-column;
+        width: 100vw;
+        .contact-form {
+            @include center-column;
+        }
+
+        .form-container {
+            @include center-column;
+            width: 60vw;
         }
         .form-cap {
-            margin-bottom: 2em;
-            width: 100%;
+            width: 85vw;
+            @include center-column;
+
+            h1 {
+                line-height: 1.2;
+                padding-bottom: 0.8em;
+            }
         }
-        .form-container {
-            width:100%;
+        .info {
+            text-align: center;
         }
     }
-
+    
     
 }
 
+@media only screen and (max-width:770px){
+    .form-container {
+        width: 100vw;
+    }
+
+    .form-cap {
+        width: 100vw;
+      
+
+    }
+
+    .contact-form {
+        width: 100vw;
+    }
+}
+
 @media only screen and (max-width: 630px){
+    .contact {
+        .form-cap {
+            width: 100vw;
+            h1 {
+                font-size: 2em;
+                line-height: 1.2;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    }
+    
     .mobile-menu {
         padding:0;
 
@@ -69,17 +123,7 @@
             display: none;
         }
     }
-    .form-cap {
-        @include center-column;
-        h1 {
-            font-size: 2em;
-
-            line-height: 1.7;
-        }
-        h2 {
-            font-size: 1.6em;
-        }
-    }
+    
 }
 
 @media only screen and (max-width: 450px) {

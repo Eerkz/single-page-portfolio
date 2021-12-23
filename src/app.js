@@ -53,11 +53,11 @@ window.scroll({
 });
 
 
-window.addEventListener('scroll',function(){
-  var scrollTop = window.scrollY || document.documentElement.scrollTop;
+window.addEventListener('scroll', ()=> {
+  let scrollTop = window.scrollY || document.documentElement.scrollTop;
 
   if(scrollTop > lastScrollTop){
-    navbar.style.top='-60px';
+    navbar.style.top='-80px';
     heroSection.style.cssText = 'margin-top:0px;';
   }
   else if(window.scrollY ===0){

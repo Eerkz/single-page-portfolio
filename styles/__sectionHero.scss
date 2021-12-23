@@ -4,17 +4,18 @@
   min-height: 80vh;
   margin-top: 80px;
 
-  p {
-    color: $yellow;
-    font-weight: 500;
-    font-size: 5vw;
+  .type-effect {
     font-family: 'Inter', sans-serif;
+    color: white;
+    font-size: 4vw;
+    font-weight: 300;
+    
   }
   .name-title {
     font-family: 'Inter', sans-serif;
     font-weight: 900;
     font-size: 6vw;
-    line-height: 1;
+    line-height: 1.3;
     // color: #dfc534;
   }
 }
